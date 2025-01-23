@@ -63,15 +63,15 @@ export default function Chat() {
   };
 
   return (
-    <div className="min-h-[600px] h-full flex flex-col bg-black/80 rounded-xl shadow-2xl overflow-hidden border border-white/20">
+    <div className="min-h-[600px] h-full flex flex-col bg-gray-900/80 rounded-xl shadow-2xl overflow-hidden border border-white/10">
       <div className="flex-grow flex flex-col">
         <div className="flex-grow overflow-y-auto p-4 space-y-4 scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-transparent">
           {messages.map((message, index) => (
             <div key={index} className={`flex flex-col ${message.role === 'assistant' ? 'items-start' : 'items-end'}`}>
               <div className={`max-w-[80%] rounded-2xl px-4 py-2 ${
                 message.role === 'assistant' 
-                  ? 'bg-gray-800/80 text-white' 
-                  : 'bg-blue-500 text-white'
+                  ? 'bg-gray-800/80 text-white/90' 
+                  : 'bg-blue-600/80 text-white/90'
               }`}>
                 <div className="text-sm font-medium mb-1 text-white/90">
                   {message.role === 'user' ? 'You' : 'Claude'}
@@ -113,19 +113,19 @@ export default function Chat() {
         </div>
       </div>
 
-      <div className="p-4 bg-black/95 border-t border-white/10">
+      <div className="p-4 bg-gray-950/50 border-t border-white/10">
         <form onSubmit={handleSubmit} className="flex space-x-2">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            className="flex-1 rounded-lg bg-white/10 border border-white/20 px-4 py-2 text-sm text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="flex-1 rounded-lg bg-gray-800/50 border border-white/10 px-4 py-2 text-sm text-white/90 placeholder-white/40 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent"
             placeholder="Ask a question..."
           />
           <button 
             type="submit"
             disabled={isLoading}
-            className="p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-transparent group"
+            className="p-2 bg-gray-800/80 hover:bg-gray-700/80 rounded-full transition-colors disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:ring-offset-2 focus:ring-offset-transparent group"
             aria-label="Send message"
           >
             <svg 
