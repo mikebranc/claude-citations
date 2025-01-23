@@ -4,6 +4,9 @@ A simple demo showcasing Claude's new citation capabilities. Built with Next.js 
 
 Claude Citations documentation: https://docs.anthropic.com/en/docs/build-with-claude/citations
 
+## Demo
+https://x.com/mike_branc/status/1882565176018546699
+
 ## Features
 
 - Chat with Claude about provided documents
